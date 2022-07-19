@@ -1,0 +1,218 @@
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.nav,
+.adise,
+.article {
+  height: 600px;
+}
+
+.nav {
+  background-color: green;
+  width: 33%;
+}
+.aside {
+  background-color: red;
+  width: 33%;
+}
+
+.article {
+  background-color: blue;
+  width: 33%;
+}
+
+.header,
+.footer {
+  background-color: lightcoral;
+  height: 200px;
+  width: 100%;
+}
+
+/* Ejemplo posiciones por areas */
+
+#grilla {
+  display: grid;
+  grid-template-areas:
+    "nav header header"
+    "nav productos publicidad"
+    "nav servicios publicidad"
+    "nav footer footer";
+  grid-template-rows: 100px 1fr 1fr 75px;
+  grid-template-columns: 20% auto 15%;
+  row-gap: 20px;
+  column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+}
+
+#padre div {
+  border: solid 1px;
+  font-size: 21px;
+  padding: 5px;
+  background-color: yellow;
+}
+
+.nav-grid {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-grid li {
+  margin-bottom: 50px;
+}
+
+.border {
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
+section#productos {
+  grid-area: productos;
+}
+section#servicios {
+  grid-area: servicios;
+}
+nav {
+  grid-area: nav;
+}
+aside {
+  grid-area: publicidad;
+}
+
+/* Ejemplo posiciones de hijos */
+#padre1 {
+  justify-items: stretch; /* start | end | center | stretch */
+
+  align-items: center; /* start | end | center | stretch */
+
+  align-content: space-around; /* start | end | center | stretch | space arround | space evenly */
+
+  justify-content: space-around; /* start | end | center | stretch | space arround | space evenly */
+
+  display: grid;
+  width: 95%;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  grid-template-rows: 100px 100px;
+  grid-row-gap: 10px;
+  height: 500px;
+  border: solid;
+}
+
+#padre1 div {
+  border: solid 1px;
+  font-size: 21px;
+  padding: 5px;
+  background-color: yellow;
+}
+
+/* Posiciones de items */
+
+.hijo {
+  /* un solo hijo */
+  /* --- probando propiedades --- */
+  justify-self: end; /* start | end | center | stretch */
+  align-self: end; /* start | end | center | stretch */
+  /* --- */
+}
+
+#padre2 div {
+  /* cada hijo */
+
+  border: solid 1px;
+  background-color: yellow;
+  font-size: 21px;
+  padding: 5px;
+}
+
+#padre2 {
+  display: grid;
+  width: 500px;
+  height: 300px;
+  border: dotted 1px red;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  grid-template-rows: auto auto;
+  grid-row-gap: 10px;
+}
+
+/* Ejemplo pc */
+
+#grilla {
+  display: grid;
+}
+/* @media screen and (min-width: 768px) {
+  #grilla {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .border {
+    border: 4px solid black;
+    background-color: blue;
+  }
+} */
+
+/* Tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #grilla {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .border {
+    border: 4px solid black;
+    background-color: green;
+  }
+}
+
+/* Celulares */
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  #grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .border {
+    border: 4px solid black;
+    background-color: red;
+  }
+}
+
+/* Clase 6 */
+/* Grid con pixeles */
+.grid3 {
+  display: grid;
+  grid-template-columns: 300px 100px;
+  grid-template-rows: 40px 100px;
+  border: solid red;
+  margin-bottom: 20px;
+}
+
+.grid3 div {
+  border: solid green;
+}
+/* Grid con fracciones */
+.grid4 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 3fr 1fr;
+  border: solid red;
+}
+
+.grid4 div {
+  border: solid green;
+}
+
+#galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 10fr);
+}
+
+/* Diseño celular */
